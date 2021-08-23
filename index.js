@@ -1,3 +1,4 @@
+require('express-async-errors');
 const config = require('config');
 const Joi = require('joi');
 Joi.objectId = require('joi-objectid')(Joi);
@@ -32,6 +33,5 @@ app.use('/api/users', users);
 app.use('/api/auth', auth);
 app.use(error);
 
-// this is a test command
 const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`Listening on port ${port}...`));
