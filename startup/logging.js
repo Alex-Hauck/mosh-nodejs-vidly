@@ -1,4 +1,4 @@
-require('winston-mongodb');
+//require('winston-mongodb');
 require('express-async-errors');
 const winston = require('winston');
 
@@ -12,7 +12,8 @@ module.exports = function (mongodbConnectURI) {
   winston.exceptions.handle(
     new winston.transports.Console({
       format: winston.format.simple(),
-      prettyPrint: true
+      prettyPrint: true,
+      colorize: true
     })
   );
 
@@ -30,16 +31,17 @@ module.exports = function (mongodbConnectURI) {
     })
   );
 
-  winston.add(
+  /*winston.add(
     new winston.transports.MongoDB({
       db: mongodbConnectURI,
       level: 'error'
     })
-  );
+  );*/
 
   winston.add(
     new winston.transports.Console({
-      format: winston.format.simple()
+      format: winston.format.simple(),
+      colorize: true
     })
   );
 };

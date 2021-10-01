@@ -1,3 +1,4 @@
+const validateObjectId = require('../middleware/validateObjectId');
 const express = require('express');
 const auth = require('../middleware/auth');
 const admin = require('../middleware/admin');
@@ -47,7 +48,8 @@ router.delete('/:id', [auth, admin], async (req, res) => {
   return res.send(genre);
 });
 
-router.get('/:id', async (req, res) => {
+router.get('/:id', validateObjectId, async (req, res) => {
+
   const genre = await Genre.findById(req.params.id);
 
   if (!genre)

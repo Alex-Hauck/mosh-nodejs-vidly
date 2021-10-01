@@ -8,5 +8,5 @@ module.exports = function (mongodbConnectURI) {
       useNewUrlParser: true,
       useCreateIndex: true
     })
-    .then(() => winston.info('Connected to MongoDB...'));
+    .then(() => winston.info(`Connected to ${mongodbConnectURI}...`));
 };
