@@ -1,3 +1,3 @@
 # vidly
 
-This is a demo application for Node.js. Test
+This is a demo application for Node.js.
