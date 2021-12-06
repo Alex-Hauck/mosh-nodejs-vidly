@@ -4,7 +4,7 @@ module.exports = function (req, res, next) {
 
   if (!req.user.isAdmin) return res.status(403).send('Access denied.');
   console.log('test');
-  console.log('test2');
+  console.log('test3');
 
 
   next();
